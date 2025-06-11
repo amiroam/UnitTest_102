@@ -24,7 +24,6 @@ namespace CalculatorLibrary.Tests.Unit
 		[InlineData(-15, -5, -10)]
 		[InlineData(5, 10, -5)]
 
-
 		public void Subtract_ShouldSubtractTwoNumbers_whenTwoNumbersAreIntegers(
 		  int a, int b, int expected)
 		{
@@ -33,7 +32,6 @@ namespace CalculatorLibrary.Tests.Unit
 			//Assert
 			Assert.Equal(expected, result);
 		}
-
 
 		[Theory]
 		[InlineData(5, 5, 25)]
@@ -48,6 +46,7 @@ namespace CalculatorLibrary.Tests.Unit
 			//Assert
 			Assert.Equal(expected, result);
 		}
+
 		[Theory]
 		[InlineData(5, 5, 1)]
 		[InlineData(15, 5, 3)]

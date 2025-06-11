@@ -63,11 +63,17 @@ namespace CalculatorLibrary.Tests.Unit
 				DateOfBirth = new(1998, 1, 28),
 			    Age	= 27,
 			};
-
+			
 			var users = _sut.Users.As<User[]>();
 			users.Should().ContainEquivalentOf(expected);
 			users.Should().HaveCount(3);
-			users.Should().Contain(x=>x.Age==27);
+			users.Should().Contain(x=>x.Age==27 &&x.FullName.StartsWith("Orima"));
+		}
+		[Fact]
+		public void EnumrableNumberAssertionExample()
+		{
+			var numbers = _sut.Numbers.As<int[]>();
+			numbers.Should().Contain(5);
 		}
 	}
 }

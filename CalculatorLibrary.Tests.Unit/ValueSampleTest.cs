@@ -40,6 +40,7 @@ namespace CalculatorLibrary.Tests.Unit
 			dateOfBirth.Should().Be(new (1998, 1, 28));
 			dateOfBirth.Should().BeAfter(new (1990, 1, 1));
 			dateOfBirth.Should().BeBefore(new (2000, 1, 1));
+
 		}
 
 		[Fact]	
@@ -75,5 +76,18 @@ namespace CalculatorLibrary.Tests.Unit
 			var numbers = _sut.Numbers.As<int[]>();
 			numbers.Should().Contain(5);
 		}
+
+		[Fact]
+		public void ExceptionThrownAssertionExample()
+		{
+			var calculator = new Calculator();
+
+			Action result = () => calculator.Divide(1, 0);
+
+			result.Should()
+				.Throw<DivideByZeroException>()
+				.WithMessage("Attempted to divide by zero.");
+		}
+
 	}
 }

@@ -89,5 +89,22 @@ namespace CalculatorLibrary.Tests.Unit
 				.WithMessage("Attempted to divide by zero.");
 		}
 
+		[Fact]
+		public void EventAssertionExample()
+		{
+			var monitorSubject = _sut.Monitor();
+			_sut.RaiseExampleEvent();
+			monitorSubject.Should().Raise("ExampleEvent");
+
+		}
+
+		[Fact]	
+		public void InternalMemberAssertionExample()
+		{
+			var number = _sut.InternalSecretNumber;
+			number.Should().Be(42);
+
+		}
+
 	}
 }

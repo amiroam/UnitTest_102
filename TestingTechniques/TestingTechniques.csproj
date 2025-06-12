@@ -6,7 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+  <ItemGroup>
+    <InternalsVisibleTo Include="CalculatorLibrary.Tests.Unit"/>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="8.2.0" />
   </ItemGroup>
